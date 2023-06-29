@@ -18,7 +18,7 @@ function submission() {
     score = score - 1;
     finalScore.innerText = "Score: " + score;
   }
-//Again creating the numbers and assigning the correct answer
+  //Again creating the numbers and assigning the correct answer
   num1 = Math.ceil(Math.random() * 10);
   num2 = Math.ceil(Math.random() * 10);
   quesEL.innerText = "What is " + num1 + " multiply by " + num2 + " ?";
