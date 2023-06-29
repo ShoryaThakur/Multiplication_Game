@@ -1,53 +1,33 @@
-var score = 0;
-// var ourAns;
-// function myfunction(val) {
-//   ourAns = val;
-// }
-// function refresh(){
-//     location.reload();
-//     submission()
-// }
+//Generating Variables
+// Before Pressing the Submit Button
 let num1 = Math.ceil(Math.random() * 10);
 let num2 = Math.ceil(Math.random() * 10);
-var quesEL = document.getElementById("question");
+let quesEL = document.getElementById("question");
 quesEL.innerText = "What is " + num1 + " multiply by " + num2 + " ?";
-var correctAns = num1 * num2;
-function submission() {
-  var ourAns = +document.getElementById("text").value;
-  var finalScore = document.getElementById("score");
-  console.log(ourAns, typeof ourAns, "b");
-  console.log(correctAns, typeof correctAns, "c");
-  if (ourAns === correctAns) {
-    score = score + 1;
+let correctAns = num1 * num2;
+let finalScore = document.getElementById("score");
+let score = 0;
 
-    console.log(score, typeof score);
+//After Pressing the Submit button
+function submission() {
+  let ourAns = document.getElementById("text").value;
+  if (ourAns == correctAns) {
+    score = score + 1;
     finalScore.innerText = "Score: " + score;
   } else {
     score = score - 1;
     finalScore.innerText = "Score: " + score;
   }
-  //Generating the random numbers
-
+//Again creating the numbers and assigning the correct answer
   num1 = Math.ceil(Math.random() * 10);
   num2 = Math.ceil(Math.random() * 10);
-
-  // applying it to the question
-
-  var quesEL = document.getElementById("question");
   quesEL.innerText = "What is " + num1 + " multiply by " + num2 + " ?";
-
-  //Correct answer
-
-  //var finalScore = document.getElementById("score");
-  //var correctAns = num1 * num2;
   correctAns = num1 * num2;
-  //var ourAns = +document.getElementById("text").value;
-  //   console.log(ourAns, typeof ourAns , "a" );
-
-  var submitEL = document.getElementById("btn");
-  //   submitEL.addEventListener("click", () => {
-
   document.getElementById("text").value = "";
-  //   }
-  //   );
 }
+
+//EXTRA INFORMATION
+// var ourAns;
+// function myfunction(val) {
+//   ourAns = val;
+// }
